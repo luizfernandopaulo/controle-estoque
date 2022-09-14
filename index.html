@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Estoque</title>
+  <link rel="stylesheet" href="style.css" media="screen">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+
+        <section class="cabeçario">
+            <div class="titulo">
+                <ion-icon name="restaurant"></ion-icon>
+                <h1>Quent<span>inhas </span><br>Do<br><span>Gr</span>au</h1>
+            </div>
+    
+            <div class="opcao">
+                <ion-icon name="home"></ion-icon>
+                <a href="https://italowillian.github.io/Cardapio-principal/">Inicio</a>
+            </div>
+        </section>
+        <div class="header">
+            <span>Cadastro de Produtos</span>
+            <button onclick="openModal()" id="new"><ion-icon name="add"></ion-icon>Novo Produto</button>
+        </div>
+
+        <div class="divTable">
+        <table>
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th class="acao">Editar</th>
+                <th class="acao">Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="modal-container">
+        <div class="modal">
+            <form>
+            <label for="m-nome">Nome</label>
+            <input id="m-nome" type="text" required />
+    
+            <label for="m-Categoria">Categoria</label>
+            <input id="m-Categoria" type="text" required />
+    
+            <label for="m-preco">Preço</label>
+            <input id="m-preco" type="number" required />
+
+            <label for="m-quantidade">Quantidade</label>
+            <input id="m-quantidade" type="number" required />
+
+            <button id="btnSalvar">Salvar</button>
+            </form>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="loader-container">
+        <img src="./img/carregando.gif">
+    </div>
+    
+
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --verde: #27ae60;
+    --laranja: #ff3838;
+    --preto: #192a56;
+    --cor_clara: #666;
+    --box-shadow: 0.5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+
+button {
+  cursor: pointer;
+}
+
+.cabeçario {
+    background-color: black;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.titulo h1 {
+    color: white;
+    text-align: center;
+}
+
+.titulo h1 span {
+    color: var(--laranja);
+}
+
+.titulo{
+    display: flex;
+    margin: 20px;
+}
+
+.titulo ion-icon{
+    color: var(--laranja);
+    font-size: 65px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.opcao ion-icon{
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.opcao a{
+    text-decoration: none;
+    color: var(--laranja);
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+.opcao a:hover{
+    background: #ff3838;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.opcao{
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.container {
+  width: 100%;
+  height: 110vh;
+  border-radius: 10px;
+  background: white;
+}
+
+.header {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header span {
+  font-weight: 900;
+  font-size: 20px;
+  word-break: break-all;
+}
+
+.header button ion-icon {
+    color: #ffffff;
+    position: relative;
+    top: 3px;
+    font-size: 18px;
+}
+
+#new {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: var(--laranja);
+  transition: 0.8s ease;
+}
+
+#new:hover {
+    transform: scale(1.1);
+    background: var(--preto);
+
+}
+
+.divTable {
+  padding: 10px;
+  width: 61rem; 
+  height:inherit; 
+  overflow:auto;
+  margin: 0 0 0 19rem;
+  border: 1.5px solid #000;
+  border-radius: 5px;
+}
+
+.divTable::-webkit-scrollbar {
+  width: 12px;
+  background-color: whitesmoke; 
+}
+
+.divTable::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: darkgray; 
+}
+
+table {
+  width: 100%;
+  border-spacing: 10px;
+  word-break: break-all;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+tr {
+  border-bottom: 1px solid rgb(238, 235, 235)!important;
+}
+
+tbody tr td {
+  vertical-align: text-top;
+  padding: 6px;
+  max-width: 50px;
+}
+
+thead tr th {
+  padding: 5px;
+  text-align: start;
+  margin-bottom: 50px;
+}
+
+tbody tr {
+  margin-bottom: 50px;
+}
+
+thead tr th.acao {
+  width: 100px!important;
+  text-align: center;
+}
+
+tbody tr td.acao {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 10px;
+  }
+  
+  .header span {
+    font-size: 15px;
+  }
+
+  #new {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  thead tr th.acao {
+    width: auto!important;
+  }
+  
+  td button i {
+    font-size: 20px!important;
+  }
+
+  td button i:first-child {
+    margin-right: 0;
+  }
+
+  .modal {
+    width: 90%!important;
+  }
+
+  .modal label {
+    font-size: 12px!important;
+  }
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.modal label {
+  font-size: 14px;
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+  outline: none;
+  padding: 5px 10px; 
+  width: 100%;
+  margin-bottom: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.modal button {
+  width: 100%;
+  margin: 10px auto;
+  outline: none;
+  border-radius: 20px; 
+  padding: 5px 10px; 
+  width: 100%;
+  border: none;
+  background-color: rgb(57, 57, 226);
+  color: white;
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal {
+  animation: modal .4s;
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-container img {
+  width: 35rem;
+}
+
+.loader-container.fade-out {
+  top: 110%;
+  opacity: 0;
+}
+
+.rodape {
+  background: #000;
+  padding: .2rem;
+  display: flex;
+  position: relative;
+  top: 20rem;
+}
+
+.rodape .image img {
+  width: 15rem;
+  margin: 0 0 0 6rem;
+}
+
+.contatos {
+  position: relative;
+  left: 30rem;
+  margin-top: 4.5rem;
+}
+
+.contatos a {
+  padding-right: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.contatos .phone a{
+  font-family: sans-serif;
+}
+
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+td button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+td button i {
+  font-size: 25px;
+}
+
+td button i:first-child {
+  margin-right: 10px;
+}
+
+
+
+@media (max-width: 1178px) {
+  .divTable {
+    width: 800px;
+    position: relative;
+    left: -120px;
+  }
+}
+
+@media (max-width: 1309px) {
+  .divTable {
+    width: 860px;
+    position: relative;
+    left: -90px;
+  }
+}
+
+@media (max-width: 1085px) {
+  .divTable {
+    width: 750px;
+    position: relative;
+    left: -130px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .divTable {
+    width: 670px;
+    position: relative;
+    left: -150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .divTable {
+    width: 380px;
+    position: relative;
+    left: -250px;
+  }
+}
+
+@media (max-width: 808px) {
+  .divTable {
+    width: 600px;
+    position: relative;
+    left: -200px;
+  }
+}
+
+@media (max-width: 712px) {
+  .divTable {
+    width: 550px;
+    position: relative;
+    left: -230px;
+  }
+}
+
+@media (max-width: 677px) {
+  .divTable {
+    width: 550px;
+    position: relative;
+    left: -230px;
+  }
+}
+
+@media (max-width: 629px) {
+  .divTable {
+    width: 480px;
+    position: relative;
+    left: -230px;
+  }
+}
+
+@media (max-width: 567px) {
+  .divTable {
+    width: 420px;
+    position: relative;
+    left: -230px;
+  }
+}
+
+
+@media (max-width: 501px) {
+  .divTable {
+    width: 400px;
+    position: relative;
+    left: -250px;
+  }
+}
+
+
+@media (max-width: 457px) {
+  .divTable {
+    width: 380px;
+    position: relative;
+    left: -260px;
+  }
+}
+
+@media (max-width: 423px) {
+  .divTable {
+    width: 340px;
+    position: relative;
+    left: -260px;
+  }
+}
+
+@media (max-width: 377px) {
+  .divTable {
+    width: 320px;
+    position: relative;
+    left: -280px;
+  }
+}
+
+@media (max-width: 341px) {
+  .divTable {
+    width: 295px;
+    position: relative;
+    left: -280px;
+  }
+}
+
+@media (max-width: 323px) {
+  .divTable {
+    width: 280px;
+    position: relative;
+    left: -280px;
+  }
+
+  .titulo ion-icon{
+    color: var(--laranja);
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .divTable {
+    width: 330px;
+    position: relative;
+    left: -280px;
+  }
+}
+
+@media (max-width: 353px) {
+  .divTable {
+    width: 310px;
+    position: relative;
+    left: -280px;
+  }
+}
+
+@media (max-width: 337px) {
+  .divTable {
+    width: 300px;
+    position: relative;
+    left: -280px;
+  }
+}
+
+
+
+
+
